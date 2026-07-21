@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "tweaks",
+  "version": "${version}",
+  "name": "Tweaks",
+  "description": "Customize Minecraft's scoreboard, tab list and subtitles: position, scale, colors, visibility and more.",
+  "authors": [
+    "SSrodri_"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/tweaks/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.tweak.tweaks.client.TweaksDataGenerator"
+    ],
+    "client": [
+      "org.tweak.tweaks.client.TweaksClient"
+    ],
+    "main": [
+      "org.tweak.tweaks.Tweaks"
+    ],
+    "modmenu": [
+      "org.tweak.tweaks.client.compat.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "tweaks.mixins.json",
+    {
+      "config": "tweaks.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}
